@@ -9,7 +9,7 @@ if ($response === FALSE) {
     exit;
 }
 
-// Decode JSON data
+//JSON data
 $data = json_decode($response, true);
 
 if (!isset($data['results']) || empty($data['results'])) {
