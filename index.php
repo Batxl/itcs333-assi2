@@ -5,14 +5,13 @@ $url = "https://data.gov.bh/api/explore/v2.1/catalog/datasets/01-statistics-of-s
 // Fetching the API data
 $response = file_get_contents($url);
 if ($response === FALSE) {
-    echo "<p>Failed to fetch data from the API. Please try again later.</p>";
+    echo "<p>Failed to fetch data from the API.</p>";
     exit;
 }
 
 // Decode JSON data
 $data = json_decode($response, true);
 
-// Check if the 'results' field exists
 if (!isset($data['results']) || empty($data['results'])) {
     echo "<p>No data available to display.</p>";
     exit;
@@ -30,8 +29,7 @@ if (!isset($data['results']) || empty($data['results'])) {
 <body>
     <main class="container">
         <h1>UOB Student Nationality Data</h1>
-
-        <!-- Data Table -->
+        
         <table>
             <thead>
                 <tr>
